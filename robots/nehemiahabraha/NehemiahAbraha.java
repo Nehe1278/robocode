@@ -8,17 +8,25 @@ public class NehemiahAbraha extends Robot {
         //eg. set the color
         //get to a known position
 
+        setBodyColor(Color.black);
+        setGunColor(Color.red);
+        setRadarColor(Color.yellow);
+        setBulletColor(Color.blue);
+
 
         while(true){
             //this repeats forever until you die
-            //int square = ahead(100) + turnLeft(45) + ahead(100) + turnLeft(45) + ahead(100) + turnLeft(45) + ahead(100);
+            turnGunRight(360);
             
-            
-            ahead(100);
+
+
+
+            /**ahead(100);
             turnGunRight(45);
             turnLeft(180);
             ahead(100);
             turnGunLeft(180);
+            **/
 
 
 
@@ -34,12 +42,27 @@ public class NehemiahAbraha extends Robot {
     }
 
     public void onScannedRobot(ScannedRobotEvent e){
-        if(e.getDistance() < 100){
+
+        //This code is very simple and straight forward, what I am basically doing is charging at the robot until i eventually end it.
+        //the robot will revaluate and scan the robot, with its radar turning 360.
+
+        double oppBearing = e.getBearing();  // The bearing to the robaot that has been scannned
+
+        double oppDistance = e.getDistance() - 45; // the distance that covers you and the opposing robot 
+
+        
+
+        
+        
+        
+        
+        /**if(e.getDistance() < 100){
             fire(3);
         }
         else{
             fire(1);
         }
-        
+        **/
     }
+
 }
