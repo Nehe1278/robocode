@@ -11,20 +11,35 @@ public class NehemiahAbraha extends Robot {
 
         while(true){
             //this repeats forever until you die
+            //int square = ahead(100) + turnLeft(45) + ahead(100) + turnLeft(45) + ahead(100) + turnLeft(45) + ahead(100);
+            
+            
             ahead(100);
-            turnGunRight(180);
-            turnLeft(45);
+            turnGunRight(45);
+            turnLeft(180);
             ahead(100);
-            turnRight(45);
             turnGunLeft(180);
-    
+
+
+
+            /**turnLeft(45);
+            ahead(100);
+            turnGunLeft(180);
+            fire(20);
             back(100);
+            **/
             
         }
 
     }
 
     public void onScannedRobot(ScannedRobotEvent e){
-        fire(20);
+        if(e.getDistance() < 100){
+            fire(3);
+        }
+        else{
+            fire(1);
+        }
+        
     }
 }
