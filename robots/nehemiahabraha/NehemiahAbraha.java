@@ -1,6 +1,7 @@
 package nehemiahabraha;
 import robocode.Robot;
 import robocode.ScannedRobotEvent;
+import java.awt.Color;
 
 public class NehemiahAbraha extends Robot {
     public void run(){
@@ -50,8 +51,13 @@ public class NehemiahAbraha extends Robot {
 
         double oppDistance = e.getDistance() - 45; // the distance that covers you and the opposing robot 
 
-        
-        
+        turnRight(oppBearing);
+        ahead(oppDistance);
+
+        fire(200);
+        scan();  // this scan method will scan again if the robot dodges or isnt there anymore, and will continue to charge again.
+
+
         
         
         
